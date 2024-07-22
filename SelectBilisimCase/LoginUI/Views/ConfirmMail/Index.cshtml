@@ -1,0 +1,22 @@
+﻿@model ConfirmMailViewModel;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+
+    <div class="form">
+        <header>Mail Adresine Gönderilmiş Olan 6 Haneli Kodu Giriniz!</header>
+        <form method="post">
+
+            <input type="hidden" asp-for="UserId" value="@ViewBag.UserID" placeholder="Doğrulama Kodu">
+            <input type="text" asp-for="ConfirmCode" placeholder="Doğrulama Kodu">
+            <input type="submit" class="button" value="Hesabı Aktifleştir">
+        </form>
+    </div>
+</body>
+</html>

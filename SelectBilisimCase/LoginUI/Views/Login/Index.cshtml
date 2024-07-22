@@ -1,0 +1,30 @@
+﻿@model LoginViewModel;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+    <div class="form">
+        <header>Giriş Yap</header>
+        <form method="post">
+            <span asp-validation-for="Mail" class="text-danger"></span>
+            <input type="text" asp-for="Mail" placeholder="Mail Adresi">
+
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <input type="password" asp-for="Password" placeholder="Parola">
+            <a href="/Password/ForgetPassword/">Şifrenizi mi unuttunuz?</a>
+            <input type="submit" class="button" value="Giriş Yap">
+        </form>
+        <div class="signup">
+            <span class="signup">
+                Hesabınız yok mu?
+                <a href="/Register/Index/">Kayıt Ol</a>
+            </span>
+        </div>
+    </div>
+</body>
+</html>

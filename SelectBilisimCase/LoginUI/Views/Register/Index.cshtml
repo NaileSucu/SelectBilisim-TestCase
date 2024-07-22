@@ -1,0 +1,40 @@
+﻿@model RegisterViewModel;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="~/css/style.css">
+</head>
+<body>
+       
+        <div class="form">
+            <header>Kayıt Ol</header>
+            <form method="post" >
+            <span asp-validation-for="Name" class="text-danger"></span>
+            <input type="text" asp-for="Name" placeholder="Adınız">
+
+            <span asp-validation-for="SurName" class="text-danger"></span>
+            <input type="text" asp-for="SurName" placeholder="Soyadınız">
+
+            <span asp-validation-for="Email" class="text-danger"></span>
+            <input type="text" asp-for="Email" placeholder="Mail Adresiniz">
+
+            <span asp-validation-for="Password" class="text-danger"></span>
+            <input type="password" asp-for="Password" placeholder="Parolanız">
+
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            <input type="password" asp-for="ConfirmPassword" placeholder="Parola Tekrarı">
+
+                <input type="submit" class="button" value="Kayıt Ol">
+            </form>
+            <div class="signup">
+                <span class="signup">
+                Kayıtlı değil misiniz?
+                    <a href="/Login/Index/">Giriş Yap</a>
+                </span>
+            </div>
+        </div>
+</body>
+</html>

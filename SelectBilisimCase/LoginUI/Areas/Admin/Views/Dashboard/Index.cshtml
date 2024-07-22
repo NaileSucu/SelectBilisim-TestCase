@@ -1,0 +1,99 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin transparent">
+        <div class="row">
+            <div class="col-md-6 mb-4 stretch-card transparent">
+                <div class="card card-tale">
+                    <div class="card-body">
+                        <p class="mb-4">24 saat içerisinde doğrulanmamış kullanıcı sayısı</p>
+                        <p class="fs-30 mb-2">@ViewBag.NotVerifiedUserCountToday</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 stretch-card transparent">
+                <div class="card card-dark-blue">
+                    <div class="card-body">
+                        <p class="mb-4">Çevrimiçi Kullanıcı Sayısı</p>
+                        <p class="fs-30 mb-2">@ViewBag.OnlineUserCountToday</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                <div class="card card-light-danger" ">
+                    <div class="card-body">
+                        <p class="mb-4">Bugün Kaydedilen Kullanıcı Sayısı</p>
+                        <p class="fs-30 mb-2">@ViewBag.RegisteredUserCountToday</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 stretch-card transparent">
+                <div class="card card-light-blue">
+                    <div class="card-body">
+                        <p class="mb-4">24 Saat İçinde Ortalama oturumda Kalma Süresi</p>
+                        <p class="fs-30 mb-2">@ViewBag.AvgSessionTimeToday</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+        <form asp-action="Index" method="post">
+        
+                <div class="card-body">
+                    <div class="d-flex justify-content-end mb-2">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuSizeButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     @ViewBag.SelectedDay
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton2">
+                                <button class="dropdown-item" type="submit" name="selectedDay" value="1">Son 1 gün</button>
+                                <button class="dropdown-item" type="submit" name="selectedDay" value="7">Son 7 gün</button>
+                                <button class="dropdown-item" type="submit" name="selectedDay" value="15">Son 15 gün</button>
+                                <button class="dropdown-item" type="submit" name="selectedDay" value="30">Son 30 gün</button>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="table-responsive">
+
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Açıklama</th>
+                                    <th>Kullanıcı Sayısı/Süre</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Doğrulanmamış Kullanıcı Sayısı</td>
+                                    <td><label class="badge badge-danger">@ViewBag.NotVerifiedUserCount</label></td>
+                                </tr>
+                                <tr>
+                                    <td>Çevrimiçi Kullanıcı Sayısı</td>
+                                    <td><label class="badge badge-warning">@ViewBag.OnlineUserCount</label></td>
+                                </tr>
+                                <tr>
+                                    <td>Kaydedilen Kullanıcı Sayısı</td>
+                                    <td><label class="badge badge-info">@ViewBag.RegisteredUserCount</label></td>
+                                </tr>
+                                <tr>
+                                    <td>Ortalama oturumda Kalma Süresi(Sn.)</td>
+                                    <td><label class="badge badge-success">@ViewBag.AvgSessionTime</label></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+            </div>
+     
+    </div>
+
+</div>
